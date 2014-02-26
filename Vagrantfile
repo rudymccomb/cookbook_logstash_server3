@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.hostname = "verify_skeleton-berkshelf"
+  config.vm.hostname = "verifi_skeleton-berkshelf"
   config.vm.box = "saucy-server-cloudimg-amd64-vagrant-disk1"
   config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/saucy/current/saucy-server-cloudimg-amd64-vagrant-disk1.box"
   config.vm.boot_timeout = 120
@@ -50,7 +50,7 @@ Vagrant.configure("2") do |config|
 	chef.arguments = '--force-formatter' # pretty output
     chef.json = {}
     chef.run_list = [
-        "recipe[verify_skeleton::default]"
+        "recipe[verifi_skeleton::default]"
     ]
   end
 

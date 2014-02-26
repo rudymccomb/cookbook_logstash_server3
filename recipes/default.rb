@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: verify_skeleton
+# Cookbook Name:: verifi_skeleton
 # Recipe:: default
 #
 # Copyright 2014, Verifi, Inc.

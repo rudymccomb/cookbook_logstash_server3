@@ -1,11 +1,11 @@
-verify_skeleton CHANGELOG
+verifi_skeleton CHANGELOG
 ===================================
 
-This file is used to list changes made in each version of the verify_skeleton cookbook.
+This file is used to list changes made in each version of the verifi_skeleton cookbook.
 
 0.1.0
 -----
-- [USER_NAME] - Initial release of verify_skeleton
+- [USER_NAME] - Initial release of verifi_skeleton
 
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.

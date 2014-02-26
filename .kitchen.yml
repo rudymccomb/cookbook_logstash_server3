@@ -25,9 +25,9 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[verify_skeleton::default]
+      - recipe[verifi_skeleton::default]
     attributes:
   - name: server
     run_list:
-      - recipe[verify_skeleton::default]
+      - recipe[verifi_skeleton::default]
     attributes:
