@@ -1,4 +1,4 @@
-# af_cookbook_skeleton cookbook
+# cookbook_verifi_skeleton cookbook
 
 # Requirements
 
