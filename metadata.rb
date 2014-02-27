@@ -1,5 +1,5 @@
 name             'verifi_skeleton'
-maintainer       'New Context Systems, Inc.'
+maintainer       'Verifi, Inc.'
 maintainer_email 'Paul MacDougall <pmacdougall@newcontext.com>'
 license          'All rights reserved'
 description      'Installs/Configures verifi_skeleton'
