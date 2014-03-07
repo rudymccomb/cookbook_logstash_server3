@@ -32,7 +32,21 @@ namespace :integration do
       instance.test(:always)
     end
   end
+
+  desc 'Run Test Kitchen with OpenStack'
+  task :openstack do
+    Kitchen.logger = Kitchen.default_file_logger
+    @loader = Kitchen::Loader::YAML.new(project_config: './.kitchen_openstack.yml')
+    config = Kitchen::Config.new( loader: @loader)
+    config.instances.each do |instance|
+      instance.test(:always)      
+    end  
+  end
 end
 
-# Default
+# default
 task default: ['style', 'spec', 'integration:vagrant']
+
+# bamboo testing
+task bamboo: ['style', 'spec', 'integration:openstack']
+

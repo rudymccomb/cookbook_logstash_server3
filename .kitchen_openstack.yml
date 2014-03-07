@@ -1,0 +1,32 @@
+driver_plugin: openstack
+driver_config:
+  openstack_username: <%= ENV['OS_USERNAME'] %>
+  openstack_api_key: <%= ENV['OS_PASSWORD'] %>
+  openstack_auth_url: <%= "#{ENV['OS_AUTH_URL']}/tokens" %>
+  openstack_tenant: <%= ENV['OS_TENANT'] %>
+  key_name: <%= ENV['OS_KITCHEN_KEYNAME'] %>
+  floating_ip_pool:
+  flavor_ref: 2
+  require_chef_omnibus: true
+  disable_ssl_validation: true
+
+platforms:
+- name: centos-6.5
+  driver_config:
+    image_ref: 43904f31-8e80-437b-8bfe-463678c98aec
+    username: cloud-user 
+- name: ubuntu-12.04
+  driver_config:
+    image_ref: a48e66fb-2b52-456d-a103-63d0bfeeeaaa
+    username: ubuntu
+
+suites:
+  - name: default
+    run_list:
+      - recipe[verifi_skeleton::default]
+    attributes:
+  - name: server
+    run_list:
+      - recipe[verifi_skeleton::default]
+    attributes:
+

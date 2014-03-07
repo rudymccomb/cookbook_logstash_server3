@@ -17,3 +17,7 @@ end
 group :kitchen_vagrant do
   gem 'kitchen-vagrant', '~> 0.11'
 end
+
+group :kitchen_openstack do
+  gem 'kitchen-openstack', '~> 1.2.0'
+end
