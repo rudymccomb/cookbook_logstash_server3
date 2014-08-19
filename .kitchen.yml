@@ -11,23 +11,13 @@ provisioner:
   name: chef_zero
 
 platforms:
-  - name: ubuntu-12.04
+  - name: ubuntu-14.04
     driver_config:
-      box: precise-server-cloudimg-amd64-vagrant-disk1
-      box_url: http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-amd64-vagrant-disk1.box
-    run_list:
-      - recipe[apt]
-  - name: centos-6.5
-    driver_config:
-      box: centos65-x86_64-20131205
-      box_url: https://github.com/2creatives/vagrant-centos/releases/download/v6.5.1/centos65-x86_64-20131205.box
+      box: trusty-server-cloudimg-amd64-vagrant-disk1
+      box_url: https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box
 
 suites:
   - name: default
-    run_list:
-      - recipe[verifi_skeleton::default]
-    attributes:
-  - name: server
     run_list:
       - recipe[verifi_skeleton::default]
     attributes:
