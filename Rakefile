@@ -20,7 +20,7 @@ desc 'Run all style checks'
 task style: ['style:chef', 'style:ruby']
 
 # Rspec and ChefSpec
-desc "Run ChefSpec examples"
+desc 'Run ChefSpec examples'
 RSpec::Core::RakeTask.new(:spec)
 
 # Integration tests. Kitchen.ci
@@ -37,10 +37,10 @@ namespace :integration do
   task :openstack do
     Kitchen.logger = Kitchen.default_file_logger
     @loader = Kitchen::Loader::YAML.new(project_config: './.kitchen_openstack.yml')
-    config = Kitchen::Config.new( loader: @loader)
+    config = Kitchen::Config.new(loader: @loader)
     config.instances.each do |instance|
-      instance.test(:always)      
-    end  
+      instance.test(:always)
+    end
   end
 end
 
@@ -49,4 +49,3 @@ task default: ['style', 'spec', 'integration:vagrant']
 
 # bamboo testing
 task bamboo: ['style', 'spec', 'integration:openstack']
-
