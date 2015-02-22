@@ -1,4 +1,4 @@
-# cookbook_verifi_skeleton cookbook
+# cookbook_logstash_server3 cookbook
 
 # Requirements
 
@@ -10,4 +10,4 @@
 
 # Author
 
-Author:: Paul MacDougall <pmacdougall@newcontext.com>
+Author:: Rudy McComb

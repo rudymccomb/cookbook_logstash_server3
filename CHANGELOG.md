@@ -1,11 +1,11 @@
-verifi_skeleton CHANGELOG
+_logstash_server3_rm CHANGELOG
 ===================================
 
-This file is used to list changes made in each version of the verifi_skeleton cookbook.
+This file is used to list changes made in each version of the _logstash_server3_rm cookbook.
 
 0.1.0
 -----
-- [USER_NAME] - Initial release of verifi_skeleton
+- [USER_NAME] - Initial release of _logstash_server3_rm
 
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.

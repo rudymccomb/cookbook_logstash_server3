@@ -3,7 +3,7 @@ require 'serverspec'
 include Serverspec::Helper::Exec
 include Serverspec::Helper::DetectOS
 
-# this is provided as a sample test, this should be removed from the non-skeleton cookbook you are creating
+# this is provided as a sample test, this should be removed from the non-logstash_server3_rm cookbook you are creating
 
 RSpec.configure do |c|
   c.before :all do
