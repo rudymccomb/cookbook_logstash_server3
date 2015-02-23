@@ -2,10 +2,13 @@ driver:
   name: vagrant
   # provided as an example, see https://github.com/test-kitchen/kitchen-vagrant for more info
   #
-  # customize:
-  #   memory: 1024
+  customize:
+    memory: 4096
   network:
-     - ["forwarded_port", {guest: 80, host: 8080}]
+     #- ["forwarded_port", {guest: 80, host: 8080}]
+     - ["forwarded_port", {guest: 9200, host: 9200, auto_correct: true}]  # elastic
+     - ["forwarded_port", {guest: 80,   host: 8080, auto_correct: true}]  # kibana
+     - ["forwarded_port", {guest: 443,   host: 8443, auto_correct: true}] # ssl
 
 provisioner:
   name: chef_zero
@@ -19,5 +22,5 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[_logstash_server3_rm::default]
+      - recipe[cookbook_logstash_server3::default]
     attributes:

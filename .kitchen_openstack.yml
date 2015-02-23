@@ -23,10 +23,10 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[_logstash_server3_rm::default]
+      - recipe[cookbook_logstash_server3::default]
     attributes:
   - name: server
     run_list:
-      - recipe[_logstash_server3_rm::default]
+      - recipe[cookbook_logstash_server3::default]
     attributes:
 

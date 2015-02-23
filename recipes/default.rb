@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: _logstash_server3_rm
+# Cookbook Name:: cookbook_logstash_server3
 # Recipe:: default
 #
 # Copyright 2014, , Inc.
@@ -38,10 +38,17 @@ dpkg_package "logstash-contrib" do
 end
 
 include_recipe 'elasticsearch'
-include_recipe 'kibana'
+include_recipe 'kibana::nginx'
 
 package 'git' do
   action :install
 end
+
+# user access for logstash
+#things left to be done
+#usermod -a -G adm logstash
+#
+
+
 
 # install logstash 'server'
