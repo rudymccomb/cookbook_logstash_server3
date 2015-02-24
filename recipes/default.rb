@@ -38,7 +38,17 @@ dpkg_package "logstash-contrib" do
 end
 
 include_recipe 'elasticsearch'
-include_recipe 'kibana::nginx'
+include_recipe 'kibana'
+
+
+
+template "/etc/nginx/nginx.conf" do
+  action :create
+  source "nginx.conf.erb"
+  mode "0644"
+  user "root"
+  group "root"
+end
 
 package 'git' do
   action :install
