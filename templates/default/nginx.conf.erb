@@ -13,11 +13,11 @@
 server {
   listen                *:80 ;
 
-  server_name           kibana.myhost.org;
+  server_name           default-ubuntu-1404;
   access_log            /var/log/nginx/kibana.myhost.org.access.log;
 
   location / {
-    root  /usr/share/kibana3;
+    root  /var/www/kibana;
     index  index.html  index.htm;
   }
 

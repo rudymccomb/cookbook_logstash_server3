@@ -38,13 +38,45 @@ dpkg_package "logstash-contrib" do
 end
 
 include_recipe 'elasticsearch'
-include_recipe 'kibana'
+#include_recipe 'kibana'
+
+puts "file_cache_path = #{Chef::Config[:file_cache_path]}"
+
+#installs with ark
 
 
+#execute "untar" do
+#  command "tar xzf /tmp/kibana-4.0.0-linux-x64.tar.gz"
+  #not_if "ls /opt/logstash"
+#end
 
-template "/etc/nginx/nginx.conf" do
+include_recipe 'nginx'
+#include_recipe 'kibana::nginx'
+directory "/var/www" do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  action :create
+end
+
+
+template "/etc/nginx/sites-available/default" do
   action :create
   source "nginx.conf.erb"
+  mode "0644"
+  user "root"
+  group "root"
+end
+
+ark "kibana" do
+   url 'https://download.elasticsearch.org/kibana/kibana/kibana-3.0.1.tar.gz'
+   path "/var/www/"
+   action :put
+end
+
+template "/var/www/kibana/config.js" do
+  action :create
+  source "config.js.erb"
   mode "0644"
   user "root"
   group "root"
@@ -54,6 +86,17 @@ package 'git' do
   action :install
 end
 
+service 'nginx' do
+  action :start
+end
+
+service 'elasticsearch' do
+  action :start
+end
+
+service 'logstash' do
+  action :start
+end
 # user access for logstash
 #things left to be done
 #usermod -a -G adm logstash

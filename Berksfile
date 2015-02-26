@@ -8,4 +8,5 @@ end
 cookbook 'java', '~> 1.31.0'
 cookbook 'nginx', '~> 2.7.4'
 cookbook 'elasticsearch', '~> 0.3.13'
-cookbook 'kibana', '~> 0.1.8'
+cookbook 'ark', '~> 0.9.0'
+#cookbook 'kibana', '~> 0.1.8'
