@@ -37,7 +37,7 @@ dpkg_package "logstash-contrib" do
   action :install
 end
 
-include_recipe 'elasticsearch'
+include_recipe 'elasticsearch::default'
 #include_recipe 'kibana'
 
 puts "file_cache_path = #{Chef::Config[:file_cache_path]}"
