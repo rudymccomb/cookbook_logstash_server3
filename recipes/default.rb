@@ -9,10 +9,11 @@
 
 #https://download.elasticsearch.org/logstash/logstash/packages/debian/logstash-contrib_1.4.2-1-efd53ef_all.deb
 
-execute "apt-get update" do
-  command "apt-get update"
-end
+#execute "apt-get update" do
+#  command "apt-get update"
+#end
 
+include_recipe 'apt'
 include_recipe 'java'
 
 remote_file "/tmp/logstash_1.4.2-1-2c0f5a1_all.deb" do
@@ -69,7 +70,7 @@ template "/etc/nginx/sites-available/default" do
 end
 
 ark "kibana" do
-   url 'https://download.elasticsearch.org/kibana/kibana/kibana-3.0.1.tar.gz'
+   url 'https://download.elasticsearch.org/kibana/kibana/kibana-3.1.1.tar.gz'
    path "/var/www/"
    action :put
 end
